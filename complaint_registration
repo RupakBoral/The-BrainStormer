@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="govt-of-india">
+        <div class="logo">
+          <img src="emblem.jpg" class="emblem">
+          <p class="logo-text"><b>Government of India</b></p>
+        </div>
+      
+        <div class="fir-portal">
+          <p><b>Online FIR Portal across India</b></p>
+        </div>
+        <div class="datetime-bar">
+          <span id="datetime"></span>
+        </div>
+    </div>
+
+    <div class="progress-list">
+    <div class="container">
+        <h1><b><u>Complaint Registration</b></u></h1>
+        <form id="complaintForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </form>
+ 
+    <form id="complaintForm1">
+        <label for="country">Country:</label>
+        <select id="country" name="country" onchange="loadStates()">
+            <option value="">Select Country</option>
+        </select>
+
+        <label for="state">State:</label>
+        <select id="state" name="state" onchange="loadDistricts()" disabled>
+            <option value="">Select State</option>
+        </select>
+
+        <label for="district">District:</label>
+        <select id="district" name="district" disabled>
+            <option value="">Select District</option>
+        </select>
+
+        <label for="nearbypolicestation">NearBy_Police Station:</label>
+        <select id="nearbypolicestation" name="nearbypolicestation" disabled>
+            <option value="">Select NearBy_Police Station</option>
+        </select>
+
+        <label for="complaint">Complaint:</label>
+        <textarea id="complaint" name="complaint" required></textarea>
+
+        <button type="button" onclick="submitComplaint()">Submit Complaint</button>
+    </form>
+</div>
+</div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
