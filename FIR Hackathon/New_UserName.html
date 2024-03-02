@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Account</title>
+</head>
+<body>
+    <div>
+        <div>
+            Creating account is fast and easy!
+        </div>
+        <input type="text" name="" id="name" placeholder="Full Name*">
+        <div class="dob">
+            <div>Date of Birth*</div>
+                <input type="date" name="" id="">
+        </div>
+        <div class="gender">
+            Gender*
+            <div>
+                <label class="genderSelect">
+                    <input type="radio" name="gender" id="gender1" required>
+                    Male
+                </label>
+                <label class="genderSelect">
+                    <input type="radio" name="gender" id="gender2" required>
+                    Female
+                </label>
+                <label class="genderSelect">
+                    <input type="radio" name="gender" id="gender3" required>
+                    Other
+                </label>
+            </div>
+        </div>
+        <div class="details">
+            <input type="tel" id="mobile" maxlength="10" minlength="10" placeholder="Mobile Number*" pattern="[0-9]*" inputmode="numeric" required>
+            <input type="email" name="" id="email_id" placeholder="Email ID">
+            <input type="number" name="" id="password_id" placeholder="Set 6 digit security PIN*" inputmode="numeric" pattern="[0-9]*" minlength="6" maxlength="6" style="-moz-appearance: textfield;">
+        </div>
+        <button class="submit">SUBMIT</button>
+        <div class="sign-in">Already have an account? <span style="color: blue ; cursor: pointer"; >Sign In</span></div>
+    </div>
+</body>
+</html>
