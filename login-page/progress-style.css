@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Montserrat, sans-serif;
+    margin: 50px;
+    border-radius: 20px;
+    height: 10px;
+    margin-top: 50px;
+    background-color: whitesmoke;
+}
+
+p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+ol {
+    list-style: none;
+    counter-reset: list;
+    padding: 0 2rem;
+    margin-right: 0rem;
+    text-align: left; /* Center-align the list */
+}
+
+.vertical-bar {
+    position: absolute;
+    left: 22rem; /* Adjust the position of the vertical bar */
+    top: 50px;
+	bottom: 20px;
+    width: 2rem; /* Adjust the width of the vertical bar */
+    height: 60rem; /* Adjust the height of the vertical bar */
+    background-color: rgb(245, 237, 237); 
+    z-index: -1;
+}
+
+/* Define the pseudo-element to simulate the <div> */
+.progress-list {
+    content: '';
+    display: block;
+    margin-right: 5rem;
+    position: relative; /* Change position to relative */
+    z-index: 1; /* Increase the z-index to place it above the vertical bar */
+    background-color: rgb(213, 101, 241);
+    padding: 0.2rem; /* Adjust padding */
+    margin-top: 2rem; /* Adjust margin */
+    border-radius: 1rem;
+    box-shadow: 0.1rem 0.1rem 1.5rem rgba(120, 28, 28, 0.3);
+}
+/* For the first list item */
+li:nth-child(1) {
+    --c1: hsl(130, 89%, 52%);
+    --c2: hsl(0, 61%, 88%);
+    --stop: calc(100%);
+}
+
+/* For the second list item */
+li:nth-child(2) {
+    --c1: hsl(133, 92%, 53%);
+    --c2: hsl(60, 61%, 88%);
+    --stop: calc(100%);
+}
+
+/* For the third list item */
+li:nth-child(3) {
+    --c1: hsl(71, 94%, 53%);
+    --c2: hsl(120, 61%, 88%);
+    --stop: calc(75%);
+}
+
+/* For the fourth list item */
+li:nth-child(4) {
+    --c1: hsl(27, 89%, 52%);
+    --c2: hsl(180, 61%, 88%);
+    --stop: calc(30%);
+}
+
+/* For the fifth list item */
+li:nth-child(5) {
+    --c1: hsl(9, 88%, 47%);
+    --c2: hsl(240, 61%, 88%);
+    --stop: calc(11%);
+}
+li:nth-child(6) {
+    --c1: hsl(4, 96%, 47%);
+    --c2: hsl(240, 61%, 88%);
+    --stop: calc(11%);
+}
+
+li {
+    --l: 12%;
+    --l2: 88%;
+    --h: calc((var(--i) - 1) * (180 / var(--length)));
+    --c1: var(--c1); /* Assign custom colors */
+    --c2: var(--c2); /* Assign custom colors */
+    --stop: var(--stop); /* Assign custom progress */
+    
+    position: relative;
+    counter-increment: list;
+    max-width: 35rem; /* Decrease the maximum width */
+    margin: 1rem auto; /* Adjust margin to center-align */
+    padding: 1.5rem 1rem 1rem; /* Adjust padding */
+    box-shadow: 0.1rem 0.1rem 1.5rem rgba(0, 0, 0, 0.3);
+    border-radius: 0.25rem;
+    overflow: hidden;
+    background-color: white;
+}
+
+li::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, var(--c1) var(--stop), var(--c2) var(--stop));
+}
+
+h3 {
+    display: flex;
+    align-items: baseline;
+    margin: 0 0 1rem;
+    color: rgb(70 70 70);
+}
+
+h3::before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+    margin-right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    content: counter(list);
+    padding: 1rem;
+    border-radius: 50%;
+    background-color: var(--c1);
+    color: white;
+}
+
+@media (min-width: 40em) {
+    li {
+        margin: 2rem auto; /* Adjust margin */
+        padding: 2rem 1.5rem 1.5rem; /* Adjust padding */
+    }
+    
+    h3 {
+        font-size: 2.25rem;
+        margin: 0 0 2rem;
+    }
+    
+    h3::before {
+        margin-right: 1.5rem;
+    }
+}
